@@ -53,7 +53,7 @@ public class DateMatch {
         return weekday;
     }
 
-    public void setWeekday(Integer day) {
+    public void setWeekday(Integer weekday) {
         this.weekday = weekday;
     }
 
