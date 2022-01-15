@@ -76,6 +76,7 @@ If the device has entered [Doze](https://developer.android.com/training/monitori
 * [`createChannel(...)`](#createchannel)
 * [`deleteChannel(...)`](#deletechannel)
 * [`listChannels()`](#listchannels)
+* [`clearDeliveredNotifications()`](#cleardeliverednotifications)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
 * [`addListener('localNotificationReceived', ...)`](#addlistenerlocalnotificationreceived)
@@ -226,6 +227,17 @@ Only available for Android.
 **Returns:** <code>Promise&lt;<a href="#listchannelsresult">ListChannelsResult</a>&gt;</code>
 
 **Since:** 1.0.0
+
+--------------------
+
+
+### clearDeliveredNotifications()
+
+```typescript
+clearDeliveredNotifications() => Promise<void>
+```
+
+Clear delivered notifications currently sitting in Notification Center.
 
 --------------------
 

@@ -119,6 +119,12 @@ export interface LocalNotificationsPlugin {
   listChannels(): Promise<ListChannelsResult>;
 
   /**
+   * Clear delivered notifications currently sitting in Notification Center.
+   * 
+   */
+  clearDeliveredNotifications(): Promise<void>;
+
+  /**
    * Check permission to display local notifications.
    *
    * @since 1.0.0

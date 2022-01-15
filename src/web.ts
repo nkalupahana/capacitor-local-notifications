@@ -30,6 +30,10 @@ export class LocalNotificationsWeb
     throw this.unimplemented('Not implemented on web.');
   }
 
+  async clearDeliveredNotifications(): Promise<void> {
+    throw this.unimplemented('Not implemented on web.');
+  }
+
   async schedule(options: ScheduleOptions): Promise<ScheduleResult> {
     if (!this.hasNotificationSupport()) {
       throw this.unavailable('Notifications not supported in this browser.');

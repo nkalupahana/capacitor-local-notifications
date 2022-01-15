@@ -195,6 +195,15 @@ public class LocalNotificationsPlugin: CAPPlugin {
             ])
         }
     }
+    
+    @objc func clearDeliveredNotifications(_ call: CAPPluginCall) {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        DispatchQueue.main.async {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
+        
+        call.resolve()
+    }
 
     /**
      * Build the content for a notification.
@@ -213,6 +222,7 @@ public class LocalNotificationsPlugin: CAPPlugin {
         content.title = NSString.localizedUserNotificationString(forKey: title, arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: body,
                                                                 arguments: nil)
+        content.badge = 1
 
         content.userInfo = [
             "cap_extra": extra,

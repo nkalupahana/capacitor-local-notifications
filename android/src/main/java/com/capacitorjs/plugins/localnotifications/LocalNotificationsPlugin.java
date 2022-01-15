@@ -1,6 +1,9 @@
 package com.capacitorjs.plugins.localnotifications;
 
 import android.content.Intent;
+
+import androidx.core.app.NotificationManagerCompat;
+
 import com.getcapacitor.Bridge;
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
@@ -110,6 +113,13 @@ public class LocalNotificationsPlugin extends Plugin {
     @PluginMethod
     public void listChannels(PluginCall call) {
         notificationChannelManager.listChannels(call);
+    }
+
+    @PluginMethod
+    public void clearDeliveredNotifications(PluginCall call) {
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getContext());
+        notificationManager.cancelAll();
+        call.resolve();
     }
 
     @PluginMethod
